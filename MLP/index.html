@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLP</title>
+        <!--
+        <script language="javascript" type="text/javascript" src="./Matrix.js"></script>
+        <script language="javascript" type="text/javascript" src="./Layer.js"></script>
+        <script language="javascript" type="text/javascript" src="./NeuralNetwork.js"></script>
+        <script language="javascript" type="text/javascript" src="./rascunho.js"></script>
+        -->
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>
+        <h2>Dados</h2>
+        <form name="Data">
+            <div name="Input">
+                <label for="fInputs">Inputs, separados por vírgula:</label>
+                <input type="text" id="fInputs" name="fInputs" placeholder="1,2,3.4,4,5" required>
+            </div>
+            <div name="Target">
+                <label for="fTargets">Outputs, separados por vírgula:</label>
+                <input type="text" id="fTargets" name="fTargets" placeholder="1,2,3.4,4,5" required>
+            </div>
+            <div>
+                <input type="reset">
+            </div>
+        </form>
+        <br>
+        <hr>
+
+
+        <!----------------------------------------------------------------------------------------------------------->
+        
+        <h1>Layers</h1>
+
+        <p id="test">Hello</p>
+        <br>
+
+        <form name="Dimension">
+            <div name="QtLayer">
+                <label for="qtLayers">qtd. H-Layers:</label>
+                <input type="number" id="qtLayers" name="qtLayers" min="1" max="99" value="1">
+            </div>
+
+            <div name="QtPerceptron">
+                <label for="qtPerceptron">qtd. Perceptron por H-Layer:</label>
+                <input type="number" id="qtPerceptron" name="qtPerceptron" min="1" max="99" value="1">
+            </div>
+        </form>
+        <br>
+        <button type="button" onclick="setup()">Treinar</button>
+
+
+        <hr>
+
+        
+        <h2>Output Gerado</h2>
+
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>Target</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody id="tBodyOut">
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Erro Total</td>
+                    <td id="tdErroTotal"></td>
+                </tr>
+                <tr style="background-color: #ff0f15;">
+                    <td>Ciclos</td>
+                    <td id="tdCiclos"></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 4px;
+            }
+            thead tr {
+                border-bottom: solid 3px #444;
+                font-weight: bold;
+            }
+            tbody tr:hover {
+                background-color: #dedede;
+            }
+            tfoot {
+                background-color: #444;
+                color: #fff;
+            }
+        </style>
+
+        <div id="grafico"></div>
+
+    </body>
+    
+</html>
